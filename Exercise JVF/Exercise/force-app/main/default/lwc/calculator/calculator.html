@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Flight Distance Calculator" icon-name="custom:custom2">
+        <div class="slds-m-around_medium">
+            <template if:true={displayList}> 
+                 <lightning-combobox
+                        name="availableAirports"
+                        label="Choose the Departure Airport"
+                        value={value}
+						required="true"
+                        placeholder="Choose Airport"
+                        options={airportsList}
+                        onchange={handleChange1} >
+                    </lightning-combobox>
+                    <lightning-combobox
+                        name="availableAirports"
+                        label="Choose the Arrival Airport"
+                        value={value}
+                        required="true"
+                        placeholder="Choose Airport"
+                        options={airportsList}
+                        onchange={handleChange} >
+                    </lightning-combobox>
+            </template>
+            <template if:false={displayList}>
+                    <p> The distance between {departure} airport and {arrival} airport is -> {distance} Km.</p>
+            </template>
+         </div>
+    </lightning-card>
+  </template>
